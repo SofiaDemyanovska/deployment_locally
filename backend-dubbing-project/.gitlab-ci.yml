@@ -1,0 +1,17 @@
+stages:
+  - lint
+  - test
+
+lint_applcation:
+  stage: lint
+  image: microsoft/dotnet:sdk
+  script:
+    - dotnet restore
+    - dotnet build
+
+test_applcation:
+  stage: test
+  image: microsoft/dotnet:sdk
+  script:
+    - dotnet restore
+    - dotnet test
